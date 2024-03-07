@@ -481,7 +481,7 @@ async function checkWorkspaceInternal(folder: vscode.Uri) {
 	output(`Check folder: ${folder.fsPath}`, currentCheck);
 
 	let targets = mypyConfig.get<string[]>("targets", []);
-	const mypyArgs = [...targets, '--show-error-end', '--no-error-summary', '--no-pretty', '--no-color-output'];
+	const mypyArgs = [...targets, '--no-pretty', '--no-color-output'];
 	const configFile = mypyConfig.get<string>("configFile");
 	if (configFile) {
 		output(`Using config file: ${configFile}`, currentCheck);
